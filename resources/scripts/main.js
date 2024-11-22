@@ -109,7 +109,6 @@ const lenis = new Lenis({
       },
     });
   });
-  
 
 
 // DREAM DRAFT CRAFT
@@ -172,16 +171,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // HOVER DECODE EFFECT
 
-// Sélectionner tous les éléments ayant la classe "coding"
 const textElements = document.querySelectorAll(".coding");
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%!@#";
 
-// Fonction pour générer un caractère aléatoire
+// Gestion caractère aléatoire
 function randomChar() {
   return chars[Math.floor(Math.random() * chars.length)];
 }
 
-// Fonction de decoding temporaire avec la bonne longueur
+// Fonction de decoding 
 function temporaryDecode(element, finalText) {
   let iterations = 0;
 
@@ -196,12 +194,33 @@ function temporaryDecode(element, finalText) {
   }, 50);
 }
 
-// Appliquer l’effet au hover temporaire pour chaque élément
+// Effet au hover 
 textElements.forEach((element) => {
   const finalText = element.innerText;
 
   element.addEventListener("mouseenter", () => temporaryDecode(element, finalText));
   element.addEventListener("mouseleave", () => {
-    element.innerText = finalText; // Restaure le texte final
+    element.innerText = finalText; 
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
+  const sections = document.querySelectorAll(".section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const bgColor = entry.target.getAttribute("data-bg");
+          header.style.backgroundColor = bgColor;
+        }
+      });
+    },
+    {
+      threshold: 0.5, // La section est considérée visible si 50% est dans le viewport
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
 });
