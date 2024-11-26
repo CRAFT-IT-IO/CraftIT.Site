@@ -20,12 +20,23 @@
 	grid-column: 10 / span 2;
 }
 
+#locations{
+	overflow: hidden;
+}
+
+#earth-map{
+	width: 100%;
+    position: absolute;
+	z-index: 0;
+}
+
 .world-wide-services .section-content .approach-section .approach {
-	padding: 8px 24px;
+	padding: 24px 24px;
+    margin-bottom: 24px;
 }
 
 	.world-wide-services .section-content .approach-section .approach p {
-		font-size: 16px;
+		font-size: clamp(1rem, 1.125vw, 1.125rem);
 	}
 
 .collaboration-models .section-content .right-content {
@@ -167,7 +178,9 @@
 }
 
 .approach {
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
 }
 
 }
@@ -205,9 +218,4 @@
 		.collaboration_models_item:first-child {
 			grid-column: auto;
 		}
-}
-
-@media screen and (max-width: 1080px) {
-
-
 }

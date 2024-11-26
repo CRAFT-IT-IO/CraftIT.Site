@@ -27,7 +27,7 @@
 
 	.chapter p:not(.section-title) {
 		color: #FF4135;
-		font-family: "IBM Plex Mono";
+		font-family: "IBM Plex Mono", monospace;
 		font-size: 16px;
 		font-style: normal;
 		font-weight: 400;
@@ -45,7 +45,7 @@
 	grid-column: 2 / span 2;
 	text-transform: uppercase;
 
-	font-family: "IBM Plex Mono";
+	font-family: "IBM Plex Mono", monospace;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -78,6 +78,9 @@
 	.section-content .right-content {
 		display: grid;
 		grid-column: 5 / span 6;
+
+		position: relative;
+    	z-index: 1;
 	}
 
 	.section-content .bottom-content {
@@ -110,6 +113,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto 1fr;
+		z-index: 1;
 	}
 
 	.section-name {
@@ -175,10 +179,18 @@
 		grid-column-gap: 1rem;
 		grid-auto-rows: auto;
 	}
+	.section-content .right-content{
+		grid-column: 1 / span 6;
+        display: grid;
+	}
 }
 
 @media screen and (max-width: 460px) {
 	.section-content {
 		grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+	}
+	.section-content .right-content{
+		grid-column: 1 / span 4;
+        display: grid;
 	}
 }
