@@ -1,4 +1,10 @@
 :root {
+	--Grey-200: #F0ECE9;
+	--Grey-400: #E2DFDC;
+	--Grey-500: #C0C0C0;
+	--Grey-700: #56514c;
+	--Grey-800: #171815;
+	--craft-Red: #EF3340;
 	--spacing-lg: 24px;
 }
 
@@ -17,7 +23,7 @@ header {
 	top: 0;
 	z-index: 1000;
 	height: 120px;
-	border: 1px solid var(--default-palette-default-gray-300, #CFC9C5);
+	border: 1px solid var(--Grey-500);
 	border-right: none;
 	display: flex;
 	justify-items: stretch;
@@ -35,10 +41,11 @@ header {
 
 .header-container {
 	padding-left: var(--spacing-lg);
+	padding-right: var(--spacing-lg);
 	height: 100%;
 	display: grid;
 	place-self: stretch;
-	grid-gap: 25px;
+	grid-gap: 16px;
 	grid-template-areas: 'logo logo baseline baseline baseline . . . menu menu menu menu';
 	grid-template-rows: 1fr;
 	grid-template-columns: repeat(12, 1fr);
@@ -84,11 +91,12 @@ header {
 
 .toggle-menu {
 	display: flex;
+	color: var(--Grey-800);
 }
 
 .menu-label {
 	display: flex;
-	color: #FF4135;
+	color: var(--craft-Red);
 	font-family: "IBM Plex Mono", monospace;
 	font-size: 16px;
 	font-style: normal;
@@ -113,12 +121,14 @@ header.is-scrolling .menu-label {
     display: none;
     width: calc(100% + (var(--spacing-lg) * 2));
     background-color: var(--Grey-400);
-    border-top: 1px solid #C0C0C0;;
+    border-top: 1px solid #C0C0C0;
+	border-right: 1px solid #C0C0C0;
     transform-origin: center right;
     overflow: hidden;
 }
 
 .menu-items a {
+	color: var(--Grey-800);
     display: block;
     padding: var(--spacing-lg);
 	padding-top: 4.7rem;
@@ -204,6 +214,11 @@ header.is-scrolling .baseline {
 	header {
 		height: auto;
 	}
+
+	.hero-message {
+		p {
+		  grid-column: 1 / span 4;}
+		}
 
 	.menu-container {
 		position: static;
