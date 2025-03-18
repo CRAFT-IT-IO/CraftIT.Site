@@ -419,6 +419,7 @@ p{
 
 		position: relative;
     	z-index: 1;
+		gap: 1.5rem;
 	}
 
 	.section-content .bottom-content {
