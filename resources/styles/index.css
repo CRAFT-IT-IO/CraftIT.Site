@@ -327,9 +327,23 @@ p{
 
 }
 
+/* SECONDARY HERO CULTURE */
+
 .sec-hero-content-wrapper{
 	grid-column: 2 / span 6;
 }
+
+.cult-hero-content-wrapper{
+	grid-column: span 12;
+
+	h2{
+		text-align: center;
+	}
+}
+.hero-culture{
+	align-items: center !important;
+}
+
 
 .ma-partner-alliance{
 	grid-column: 10 / span 2;
@@ -450,7 +464,7 @@ p{
 	/* chapter */
 	.chapter {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(8, 1fr);
 		grid-template-rows: auto auto 1fr;
 		z-index: 1;
 	}
@@ -458,18 +472,19 @@ p{
 	.section-name {
 		justify-self: end;
 		grid-row: 1;
-		grid-column: 2;
-	}
-
-	.section-title {
-		grid-row: 3;
-		grid-column: 1 / span 2;
+		grid-column: 7 / span 2;
+		text-align: right;
 	}
 
 	.section-number {
 		justify-self: end;
 		grid-row: 2;
-		grid-column: 2;
+		grid-column: 8;
+	}
+
+	.section-title {
+		grid-row: 3;
+		grid-column: 1 / span 6;
 	}
 
 	/* section content*/
@@ -519,12 +534,22 @@ p{
 		grid-column-gap: 1rem;
 		grid-auto-rows: auto;
 	}
+	.chapter {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
 	.section-content .right-content{
 		grid-column: 1 / span 6;
         display: grid;
 	}
-	.section-name{
+	.section-name {
+		grid-column: 5 / span 2;
 		text-align: right;
+	}
+	.section-number {
+		grid-column: 6;
+	}
+	.services-name{
+		text-align: left;
 	}
 }
 
@@ -532,9 +557,24 @@ p{
 	.section-content {
 		grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 	}
+	.chapter {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
 	.section-content .right-content{
 		grid-column: 1 / span 4;
         display: grid;
+	}
+
+	.section-content .right-content{
+		grid-column: 1 / span 4;
+        display: grid;
+	}
+	.section-name {
+		grid-column: 3 / span 2;
+		text-align: right;
+	}
+	.section-number {
+		grid-column: 4;
 	}
 }
 
@@ -679,7 +719,7 @@ p{
 
 #moodys {
 	display: flex;
-	gap: 4rem;
+	gap: 3rem;
 	flex-direction: column;
 	padding-top: 0;
 	background-color: var(--Grey-200);
@@ -838,16 +878,17 @@ footer {
 		display: grid;
 		grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
 		grid-column-gap: 1rem;
+		gap: 1rem;
 	}
 
 	/* ----------- HERO */
-
+	
 	.sec-hero-content-wrapper{
-		grid-column: 2 / span 7;
+		grid-column: 1 / span 6;
 	}
 
 	.ma-partner-alliance{
-		grid-column: 2 / span 2;
+		grid-column: 1 / span 2;
 	}
 	
 	.msg-wrapper {
@@ -899,16 +940,6 @@ footer {
 
 @media screen and (max-width: 760px) {
 
-
-	/* ----------- HERO */
-
-	.sec-hero-content-wrapper{
-		grid-column: 1 / span 6;
-	}
-
-	.ma-partner-alliance{
-		grid-column: 1 / span 2;
-	}
 
 	/* ----------- STRUCTURE */
 

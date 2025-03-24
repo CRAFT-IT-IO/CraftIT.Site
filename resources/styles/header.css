@@ -49,6 +49,7 @@ header {
 	grid-template-areas: 'logo logo baseline baseline baseline . . . menu menu menu menu';
 	grid-template-rows: 1fr;
 	grid-template-columns: repeat(12, 1fr);
+	z-index: 4;
 }
 
 .hero-logo {
@@ -62,6 +63,7 @@ header {
 	grid-area: baseline;
 	padding-top: var(--spacing-lg);
 	margin-bottom: var(--spacing-lg);
+	line-height: 1.2rem;
 }
 
 .menu {
@@ -115,16 +117,22 @@ header.is-scrolling .menu-label {
 }
 
 .menu-items {
-    position: absolute;
-    top: calc(100% + 24px);
-    left: -25px; /* spacing + border */
-    display: none;
+	position: absolute;
+    left: -25px;
     width: calc(100% + (var(--spacing-lg) * 2));
     background-color: var(--Grey-400);
     border-top: 1px solid #C0C0C0;
-	border-right: 1px solid #C0C0C0;
-    transform-origin: center right;
-    overflow: hidden;
+    border-right: 1px solid #C0C0C0;
+    display: none; /* Initialement masqué */
+    overflow: hidden; /* Pour l'animation de dépliage */
+	z-index: -1; /* Z-index négatif par défaut pour être sous les autres éléments */
+}
+.m-item-1{
+	top: calc(100% + 24px);
+    z-index: 2;
+}
+.m-item-2{
+	z-index: 1;
 }
 
 .menu-items a {
