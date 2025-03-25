@@ -24,6 +24,8 @@
 
     </head>
     <body>
+        <canvas id="deformable-circle"></canvas>
+
         <header>
             <div class="header-container">
                 <div class="hero-logo">
@@ -50,7 +52,7 @@
                     <div class="menu-container">
                         <div class="menu-label">MENU</div>
                         <div class="menu-item-selected">
-                            <p class="toggle-menu">Our Culture</p>
+                            <p class="toggle-menu">About us</p>
                             <img class="arrow-back" src="./resources/assets/arrow_back.svg" alt="">
                         </div>
                         <div class="menu-items m-item-1" id="menuItems">
@@ -68,7 +70,7 @@
 
             <div class="contain-wrap site-grid">
                 <div class="cult-hero-content-wrapper disap">
-                    <h2 class="scroll-fade culture">A culture of excellence</h2>
+                    <h2 class="scroll-fade culture">We craft the future of technology</h2>
                 </div>
             </div>
     
@@ -92,48 +94,11 @@
     
                     <div class="section-content">
                         <div class="right-content">
-                            <p>At Craft, we believe that software isn’t just about code but about craftsmanship. Like master artisans, we design, build, and refine technology that stands the test of time. Our vision is to create a world where technology is engineered with precision, resilience, and purpose.</p>
+                            <p>At craft it, we believe that software isn’t just about code but about craftsmanship. Like master artisans, we design, build, and refine technology that stands the test of time. Our vision is to create a world where technology is engineered with precision, resilience, and purpose.</p>
                             <p>We are shaping an ecosystem where innovation meets excellence, empowering businesses to navigate complexity and drive digital transformation with confidence.</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- PARTNERS -->
-                <div id="partners" class="container-wrap">
-                    <div class="chapter">
-                        <p class="section-start">//</p>
-                        <p class="section-name">Partnership</p>
-                        <h3 class="section-title">
-                            Trusted by leading tech and innovation partners
-                        </h3>
-                        <p class="section-number">002</p>
-                    </div>
-    
-                    <div class="section-content">
-
-                        <div class="right-content partners-grid">
-                            <div class="partner">
-                              <img src="resources/assets/logos/fintechbe.png" alt="Fintech Belgium logo">
-                            </div>
-                            <div class="partner">
-                              <img src="resources/assets/logos/moodys.png" alt="Moody's logo">
-                            </div>
-                            <div class="partner">
-                              <img src="resources/assets/logos/hub-brussels.png" alt="Hub Brussels logo">
-                            </div>
-                            <div class="partner">
-                              <img src="resources/assets/logos/software.png" alt="Hub Brussels Software logo">
-                            </div>
-                            <div class="partner">
-                              <img src="resources/assets/logos/becode.png" alt="BeCode logo">
-                            </div>
-                            <div class="partner">
-                              <img src="resources/assets/logos/reb.png" alt="Réseau Entreprendre Belgique logo">
-                            </div>
-                          </div>
-
-                    </div>
-                </div>                
+                </div>              
 
                 <!-- VALUES -->
                 <div id="grasp" class="container-wrap">
@@ -143,7 +108,7 @@
                         <h3 class="section-title">
                             Our grasp of the trade allows us to assert that:
                         </h3>
-                        <p class="section-number">003</p>
+                        <p class="section-number">002</p>
                     </div>
     
                     <div class="section-content">
@@ -185,6 +150,43 @@
                     </div>
 
                 </div>
+
+                <!-- PARTNERS -->
+                <div id="partners" class="container-wrap">
+                    <div class="chapter">
+                        <p class="section-start">//</p>
+                        <p class="section-name">Partnership</p>
+                        <h3 class="section-title">
+                            Trusted by leading tech and innovation partners
+                        </h3>
+                        <p class="section-number">003</p>
+                    </div>
+    
+                    <div class="section-content">
+
+                        <div class="right-content partners-grid">
+                            <div class="partner">
+                              <img src="resources/assets/logos/fintechbe.png" alt="Fintech Belgium logo">
+                            </div>
+                            <div class="partner">
+                              <img src="resources/assets/logos/moodys.png" alt="Moody's logo">
+                            </div>
+                            <div class="partner">
+                              <img src="resources/assets/logos/hub-brussels.png" alt="Hub Brussels logo">
+                            </div>
+                            <div class="partner">
+                              <img src="resources/assets/logos/software.png" alt="Hub Brussels Software logo">
+                            </div>
+                            <div class="partner">
+                              <img src="resources/assets/logos/becode.png" alt="BeCode logo">
+                            </div>
+                            <div class="partner">
+                              <img src="resources/assets/logos/reb.png" alt="Réseau Entreprendre Belgique logo">
+                            </div>
+                          </div>
+
+                    </div>
+                </div>                  
 
          </main>
 
@@ -245,7 +247,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
         <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-        
+
+        <script type="module" src="resources/scripts/deformable-circle.js"></script>        
     
         <script src="resources/scripts/sticky.js" defer></script>
         <script src="resources/scripts/menu.js" defer></script>
