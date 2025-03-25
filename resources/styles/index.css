@@ -299,7 +299,7 @@ main {
 }
 
 p{
-	grid-column: 9 / span 3;
+	grid-column: 1 / span 5;
 	font-size: clamp(1.125rem, 1.25vw, 1.25rem);
 	color: var(--Grey-800);
 	display: flex;
@@ -726,7 +726,7 @@ p{
 
 .intro-msg {
 	position: relative;
-	height: 320vh;
+	height: 300vh;
 	display: flex;
 	align-items: start;
   
@@ -743,7 +743,7 @@ p{
 		justify-content: center;
 		flex-wrap: wrap;
 		align-items: center;
-		height: 80vh;
+		height: 75vh;
   
 		.content_text {
 		  max-width: 66.666667%;
