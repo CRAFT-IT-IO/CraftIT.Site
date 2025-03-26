@@ -17,7 +17,7 @@ const velocities = [];
 
 const material = new THREE.PointsMaterial({
   color: 0x1f1c1a,
-  size: 0.015,
+  size: 0.02,
   sizeAttenuation: true,
 });
 
