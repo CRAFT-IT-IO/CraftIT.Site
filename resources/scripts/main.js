@@ -5,6 +5,17 @@ var svgPath = document.querySelector(".arrow-path");
 var callToAction = document.querySelector(".call-to-action");
 var mainContent = document.querySelector("main");
 
+document.addEventListener('scroll', function () {
+  
+  const header = document.querySelector('header');
+  
+  if (window.scrollY > 0) {
+    header.classList.add('is-scrolling');
+  } else {
+    header.classList.remove('is-scrolling');
+  }
+});
+
 // HERO ANIMATION TEXT
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -84,11 +95,22 @@ const lenis = new Lenis({
   
   // Décomposition des mots dans chaque paragraphe
   document.querySelectorAll(".content_text").forEach((el) => {
-    const words = el.textContent.split(" ").map(
-      (word) => `<span class="word">${word}</span>`
-    );
-    el.innerHTML = words.join(" ");
+    const html = el.innerHTML;
+  
+    // Séparer les parties par <br> (on garde les balises <br> en les réinsérant après traitement)
+    const parts = html.split(/<br\s*\/?>/i);
+  
+    const wrapped = parts.map(part => {
+      return part
+        .trim()
+        .split(" ")
+        .map(word => `<span class="word">${word}</span>`)
+        .join(" ");
+    });
+  
+    el.innerHTML = wrapped.join("<br>");
   });
+
   
   // Animation GSAP pour les mots
   gsap.registerPlugin(ScrollTrigger);
@@ -97,10 +119,11 @@ const lenis = new Lenis({
     const words = el.querySelectorAll(".word");
     gsap.from(words, {
       opacity: .1,
-      y: 30, 
-      stagger: 0.1, 
+      y: 100, 
+      stagger: 0.5, 
       duration: 1,
       ease: "power2.out",
+      delay: 0.5, 
       scrollTrigger: {
         trigger: el, 
         start: "top 100%", 
@@ -165,7 +188,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => observer.observe(section));
 });
-
-
-
-

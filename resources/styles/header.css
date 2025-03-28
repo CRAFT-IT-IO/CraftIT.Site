@@ -41,7 +41,6 @@ header {
 
 .header-container {
 	padding-left: var(--spacing-lg);
-	padding-right: var(--spacing-lg);
 	height: 100%;
 	display: grid;
 	place-self: stretch;
@@ -235,6 +234,12 @@ header.is-scrolling .baseline {
 	.menu-items {
 		top: 100%;
 		left: -1px;
+		a{
+			font-size: 1rem;
+		}
+	}
+	.m-item-2{
+		top: calc(100% + 116.195px);
 	}
 
 	/* Baseline*/
@@ -252,11 +257,10 @@ header.is-scrolling .baseline {
 	.menu {
 		justify-content: end;
 		align-content: center;
-		.menu-label
-
-{
-	display: none;
-}
+		
+		.menu-label{
+					display: none;
+					}
 
 .menu-item-selected {
 	gap: 8px;
