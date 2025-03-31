@@ -2,6 +2,7 @@ $(document).ready(function () {
     const menu = $('.menu');
     const menuItem1 = $('.m-item-1');
     const menuItem2 = $('.m-item-2');
+    const menuToggle = $('.toggle-menu, .menu-label'); // Utiliser des éléments spécifiques pour le toggle
 
     let menuItemHeight = 0;
     let isAnimating = false;
@@ -93,6 +94,7 @@ $(document).ready(function () {
     const isInitiallyMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
     if (!isInitiallyMobile) {
+        // Desktop behavior
         menu.on('mouseenter', () => {
             clearTimeout(closeTimeout);
             openMenu();
@@ -103,10 +105,18 @@ $(document).ready(function () {
             closeTimeout = setTimeout(closeMenu, 150);
         });
     } else {
-        menu.on('click', function (e) {
+        // Mobile behavior - uniquement sur les éléments de toggle
+        menuToggle.on('click touchstart', function (e) {
             e.preventDefault();
             e.stopPropagation();
             isOpen ? closeMenu() : openMenu();
+        });
+
+        // Ne pas intercepter les clics sur les liens
+        $('.menu-items a').on('click touchstart', function(e) {
+            // Permettre la navigation normale pour les liens
+            e.stopPropagation();
+            return true;
         });
 
         $(document).on('click touchstart', function (e) {

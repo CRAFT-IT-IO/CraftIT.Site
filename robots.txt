@@ -1,0 +1,6 @@
+user-agent: *
+Disallow: /admin/
+Disallow: /resources/
+Disallow: /node_modules/
+
+sitemap: https://www.craft-it.io/sitemap.xml
